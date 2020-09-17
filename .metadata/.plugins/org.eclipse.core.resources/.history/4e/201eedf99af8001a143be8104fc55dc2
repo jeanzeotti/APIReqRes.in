@@ -1,0 +1,5 @@
+package br.jzp.base;
+
+public class BaseTest implements Constantes {
+
+}

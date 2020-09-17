@@ -1,0 +1,24 @@
+package br.jzp.teste;
+
+import static io.restassured.RestAssured.given;
+
+import org.junit.jupiter.api.Test;
+
+import br.jzp.base.BaseTest;
+
+
+public class ReqResTest extends BaseTest {
+	
+	@Test
+	public void obterUsuariosDaLista() {
+		
+		given()
+			.log().all()
+		.when()
+			.get("https://reqres.in/api/users?page=2")
+		.then()
+			.statusCode(200)
+		;
+	}
+
+}

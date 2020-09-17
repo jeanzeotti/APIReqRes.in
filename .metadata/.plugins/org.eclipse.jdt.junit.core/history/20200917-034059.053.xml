@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ReqResTest" project="br.jzp" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="br.jzp.teste.ReqResTest" time="4.471" displayname="ReqResTest" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]">
+    <testcase name="obterUsuariosDaLista" classname="br.jzp.teste.ReqResTest" time="1.697" displayname="obterUsuariosDaLista()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:obterUsuariosDaLista()]"/>
+    <testcase name="atualizarUmUsuario" classname="br.jzp.teste.ReqResTest" time="0.569" displayname="atualizarUmUsuario()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:atualizarUmUsuario()]"/>
+    <testcase name="obterUmUsuario" classname="br.jzp.teste.ReqResTest" time="0.16" displayname="obterUmUsuario()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:obterUmUsuario()]"/>
+    <testcase name="naoDeveListarNenhumUsuario" classname="br.jzp.teste.ReqResTest" time="0.516" displayname="naoDeveListarNenhumUsuario()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:naoDeveListarNenhumUsuario()]"/>
+    <testcase name="criarUsuario" classname="br.jzp.teste.ReqResTest" time="0.532" displayname="criarUsuario()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:criarUsuario()]"/>
+    <testcase name="registroSemSucesso" classname="br.jzp.teste.ReqResTest" time="0.516" displayname="registroSemSucesso()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:registroSemSucesso()]"/>
+    <testcase name="deletarUmUsuario" classname="br.jzp.teste.ReqResTest" time="0.48" displayname="deletarUmUsuario()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:deletarUmUsuario()]"/>
+  </testsuite>
+</testrun>

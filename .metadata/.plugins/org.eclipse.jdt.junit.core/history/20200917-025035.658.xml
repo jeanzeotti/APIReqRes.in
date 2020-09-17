@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ReqResTest.criarUsuario" project="br.jzp" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="br.jzp.teste.ReqResTest" time="1.792" displayname="ReqResTest" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]">
+    <testcase name="criarUsuario" classname="br.jzp.teste.ReqResTest" time="1.792" displayname="criarUsuario()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:criarUsuario()]"/>
+  </testsuite>
+</testrun>

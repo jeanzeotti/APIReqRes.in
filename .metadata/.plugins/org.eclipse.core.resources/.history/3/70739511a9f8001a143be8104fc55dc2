@@ -1,0 +1,74 @@
+package br.jzp.teste;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.jupiter.api.Test;
+
+import br.jzp.base.BaseTest;
+
+
+public class ReqResTest extends BaseTest {
+	
+	@Test
+	public void obterUsuariosDaLista() {
+		given()
+		.when()
+			.get("/api/users?page=2")
+		.then()
+			.statusCode(200)
+			.body("page", is(2))
+			.body("per_page", is(6))
+			.body("total_pages", is(2))
+			.body("data.id[0]", is(7))
+			.body("data.id", hasSize(6))
+		;
+	}
+
+	@Test
+	public void obterUmUsuario() {
+		given()
+		.when()
+			.get("/api/users/2")
+		.then()
+			.statusCode(200)
+			.body("data.id", is(2))
+			.body("data.email", is("janet.weaver@reqres.in"))
+			.body("data.first_name", is("Janet"))
+			.body("data.last_name", is("Weaver"))
+		;
+	}
+	
+	@Test
+	public void naoDeveListarNenhumUsuario() {
+		String resposta = given()
+		.when()
+			.get("/api/users/23")
+		.then()
+			.statusCode(404)
+			.extract().asString();
+		;
+		assertEquals("{}", resposta);
+	}
+	
+	@Test
+	public void criarUsuario() {
+		Map<String, String> usuario = new HashMap<>();
+		usuario.put("nome", "morpheus");
+		usuario.put("trabalho", "líder");
+		
+		given()
+			.body(usuario)
+		.when()
+			.get("/api/users")
+		.then()
+			.statusCode(202)
+		;
+		
+	}
+}

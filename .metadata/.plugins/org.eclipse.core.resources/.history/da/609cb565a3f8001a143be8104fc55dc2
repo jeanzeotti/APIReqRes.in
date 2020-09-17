@@ -1,0 +1,31 @@
+package br.jzp.teste;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
+
+import org.junit.jupiter.api.Test;
+
+import br.jzp.base.BaseTest;
+
+
+public class ReqResTest extends BaseTest {
+	
+	@Test
+	public void obterUsuariosDaLista() {
+		
+		given()
+			.log().all()
+		.when()
+			.get("/api/users?page=2")
+		.then()
+			.statusCode(200)
+			.log().all()
+			.body("page", is(2))
+			.body("per_page", is(6))
+			.body("total_pages", is(2))
+			.body("data.id[0]", is(7))
+			.body("data.id", hasSize(5))
+		;
+	}
+
+}

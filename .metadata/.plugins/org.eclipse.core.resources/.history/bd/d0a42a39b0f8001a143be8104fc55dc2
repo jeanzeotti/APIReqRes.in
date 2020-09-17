@@ -1,0 +1,134 @@
+package br.jzp.teste;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.jupiter.api.Test;
+
+import br.jzp.base.BaseTest;
+
+
+public class ReqResTest extends BaseTest {
+	
+	private String name = "Jean";
+	private String job = "Teste";
+	private String email = "teste@teste.com";
+	
+	private Usuario getUsuario() {
+		Usuario usuario = new Usuario();
+		usuario.setName(name);
+		usuario.setJob(job);
+		usuario.setEmail(email);
+		return usuario;
+	}
+	
+	
+	
+	@Test
+	public void obterUsuariosDaLista() {
+		given()
+		.when()
+			.get("/api/users?page=2")
+		.then()
+			.statusCode(200)
+			.body("page", is(2))
+			.body("per_page", is(6))
+			.body("total_pages", is(2))
+			.body("data.id[0]", is(7))
+			.body("data.id", hasSize(6))
+		;
+	}
+
+	@Test
+	public void obterUmUsuario() {
+		given()
+		.when()
+			.get("/api/users/2")
+		.then()
+			.statusCode(200)
+			.body("data.id", is(2))
+			.body("data.email", is("janet.weaver@reqres.in"))
+			.body("data.first_name", is("Janet"))
+			.body("data.last_name", is("Weaver"))
+		;
+	}
+	
+	@Test
+	public void naoDeveListarNenhumUsuario() {
+		String resposta = given()
+		.when()
+			.get("/api/users/23")
+		.then()
+			.statusCode(404)
+			.extract().asString();
+		;
+		assertEquals("{}", resposta);
+	}
+	
+	@Test
+	public void criarUsuario() {
+		Usuario usuario = getUsuario();
+		String name = usuario.getName();
+		String job = usuario.getJob();
+//		Map<String, String> usuario = new HashMap<>();
+//		usuario.put("name", "Jean");
+//		usuario.put("job", "Teste");
+		
+		given()
+			.pathParam("name", name)
+			.pathParam("job", job)
+		.when()
+			.post("/api/users")
+		.then()
+			.log().all()
+			.statusCode(201)
+			.body("name", is( name))
+			.body("job", is(job))
+		;
+		
+		System.out.println("----------------" + name);
+		System.out.println("----------------" + job);
+	}
+	
+	@Test
+	public void atualizarUmUsuario() {
+		Usuario usuario = getUsuario();
+		
+		given()
+			.body(usuario)
+		.when()
+			.put("/api/users/2")
+		.then()
+			.statusCode(200)
+			.body("name", is( "Jean"))
+			.body("job", is("Teste"))
+		;
+	}
+	
+	@Test
+	public void deletarUmUsuario() {
+		given()
+		.when()
+			.delete("/api/users/2")
+		.then()
+			.statusCode(204)
+			
+		;
+	}
+	
+	@Test
+	public void registroSemSucesso() {
+		given()
+		.when()
+			.delete("/api/users/2")
+		.then()
+			.statusCode(204)
+			
+		;
+	}
+}

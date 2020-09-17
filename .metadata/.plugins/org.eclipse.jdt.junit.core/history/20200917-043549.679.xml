@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ReqResTest" project="br.jzp" tests="9" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="br.jzp.teste.ReqResTest" incomplete="true" displayname="ReqResTest" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]">
+    <testcase name="obterUsuariosDaLista" classname="br.jzp.teste.ReqResTest" time="1.571" displayname="obterUsuariosDaLista()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:obterUsuariosDaLista()]"/>
+    <testcase name="atualizarUmUsuario" classname="br.jzp.teste.ReqResTest" time="0.623" displayname="atualizarUmUsuario()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:atualizarUmUsuario()]"/>
+    <testcase name="teste" classname="br.jzp.teste.ReqResTest" incomplete="true" displayname="teste()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:teste()]"/>
+    <testcase name="obterUmUsuario" classname="br.jzp.teste.ReqResTest" incomplete="true" displayname="obterUmUsuario()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:obterUmUsuario()]"/>
+    <testcase name="naoDeveListarNenhumUsuario" classname="br.jzp.teste.ReqResTest" incomplete="true" displayname="naoDeveListarNenhumUsuario()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:naoDeveListarNenhumUsuario()]"/>
+    <testcase name="criarUsuario" classname="br.jzp.teste.ReqResTest" incomplete="true" displayname="criarUsuario()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:criarUsuario()]"/>
+    <testcase name="loginComSucesso" classname="br.jzp.teste.ReqResTest" incomplete="true" displayname="loginComSucesso()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:loginComSucesso()]"/>
+    <testcase name="registroSemSucesso" classname="br.jzp.teste.ReqResTest" incomplete="true" displayname="registroSemSucesso()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:registroSemSucesso()]"/>
+    <testcase name="deletarUmUsuario" classname="br.jzp.teste.ReqResTest" incomplete="true" displayname="deletarUmUsuario()" uniqueid="[engine:junit-jupiter]/[class:br.jzp.teste.ReqResTest]/[method:deletarUmUsuario()]"/>
+  </testsuite>
+</testrun>
